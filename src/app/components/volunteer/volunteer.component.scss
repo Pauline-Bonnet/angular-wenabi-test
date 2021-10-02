@@ -1,0 +1,97 @@
+@import './../../../assets/colors.scss';
+
+.volunteer-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto 48px auto;
+    padding: 16px;
+    width: 95%;
+    height: fit-content; // a changer plus tard
+    border-radius: 30px;
+    box-shadow: 0px 3px 6px #00000029;
+
+    &:nth-child(1) {
+        margin-top: 42px;
+    }
+
+    .left-panel {
+        display: flex;
+        padding: 0 0 16px 0;
+        border-bottom: 1px solid $light-grey;
+
+        img {
+            width: 75px;
+            height: 75px;
+
+            @media (min-width: 900px) {
+                width: 153px;
+                height: 153px;
+            }
+        }
+
+        .identity {
+            width: 50%;
+            text-align: center;
+
+            p {
+                &:nth-of-type(1) {
+                    margin: 8px 0;
+                    color: #404040;
+                }
+                &:nth-of-type(2) {
+                    color: #8C8C8C;
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .presentation {
+            width: 50%;
+            margin-left: 8px;
+
+            & > p:nth-of-type(1) {
+                font-weight: 700;
+            }
+            & > p:nth-of-type(2) {
+                color: #404040;
+                font-size: 14px;
+            }
+
+            .mission {
+                margin-top: 16px;
+                color: #404040;
+                font-size: 14px;
+
+                div {
+                    display: flex;
+                    margin-bottom: 4px;
+
+                    fa-icon {
+                        margin-right: 8px;
+                        color: #000;
+                    }
+
+                    p:nth-of-type(1)::first-letter {
+                        text-transform: uppercase;
+                    }
+                }
+            
+            }
+        }
+    }
+
+    .right-panel {
+        margin-top: 16px;
+
+        .status {
+            display: flex;
+            align-items: center;
+
+            span {
+                margin-right: 16px;
+                font-size: 14px;
+                color: #8C8C8C;
+            }
+        }
+    }
+}

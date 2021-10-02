@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { StatusName } from 'src/app/objects/statistics';
 
 @Component({
   selector: 'app-tag',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TagComponent implements OnInit {
 
+  @Input() status!: string;
+  color!: string;
+
   constructor() { }
 
   ngOnInit() {
+    this.color = this.status.toLocaleLowerCase();
+    this.status = StatusName[this.status];
   }
-
 }

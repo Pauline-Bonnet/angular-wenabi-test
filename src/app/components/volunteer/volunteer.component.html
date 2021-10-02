@@ -10,14 +10,16 @@
             <p>{{ wish.volunteerProfile.company.name }}</p>
             
             <div class="mission">
-                <p>{{ wish.initiative.title }}</p>
-                <p>{{ wish.initiative.city }}</p>
-                <p>{{ wish.coordinatorProfile.firstname }} {{ wish.coordinatorProfile.lastname }}</p>
+                <div><fa-icon [icon]="handIcon"></fa-icon><p>{{ wish.initiative.title }}</p></div>
+                <div><fa-icon [icon]="mapIcon"></fa-icon><p>{{ wish.initiative.city }}</p></div>
+                <div><fa-icon [icon]="userIcon"></fa-icon><p>{{ wish.coordinatorProfile.firstname }} {{ wish.coordinatorProfile.lastname }}</p></div>
             </div>
         </div>
     </div>
     <div class="right-panel">
         <div class="status">
+            <span>Statut : </span> 
+            <app-tag [status]="wish.status"></app-tag>
         </div>
     </div>
 </div>

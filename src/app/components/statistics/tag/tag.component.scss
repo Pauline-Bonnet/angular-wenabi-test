@@ -1,0 +1,39 @@
+@import './../../../../assets/colors.scss';
+
+.tag {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 250px;
+    border-radius: 25px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.35);
+
+    .sticker {
+        margin: 0 16px 0 8px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+
+        &.application {
+            background-color: $light-red;
+        } 
+        &.discussion {
+            background-color: $dark-red;
+        }
+        &.waiting_association_validation {
+            background-color: $dark-yellow;
+        }
+        &.waiting_manager_validation {
+            background-color: $light-yellow;
+        }
+        &.in_progress {
+            background-color: $ligth-green;
+        }
+        &.user_has_participated {
+            background-color: $dark-green;
+        }
+        &.cancelled {
+            background-color: $light-grey;
+        }
+    }
+}
