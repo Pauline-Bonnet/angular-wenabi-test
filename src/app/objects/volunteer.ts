@@ -8,7 +8,7 @@ export interface VolunteerIO {
     volunteerProfile: Profile;
     coordinatorProfile: Profile;
     initiative: Initiative;
-    entries: Entry[];
+    entries?: Entry[];
 }
 
 export class Volunteer {
@@ -18,7 +18,7 @@ export class Volunteer {
     volunteerProfile: Profile;
     coordinatorProfile: Profile;
     initiative: Initiative;
-    entries: Entry[];
+    entries?: Entry[];
 
     constructor(props: Partial<VolunteerIO>) {
         this.id = props.id;

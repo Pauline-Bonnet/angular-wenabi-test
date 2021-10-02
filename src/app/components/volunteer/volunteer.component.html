@@ -21,5 +21,10 @@
             <span>Statut : </span> 
             <app-tag [status]="wish.status"></app-tag>
         </div>
+        <div class="entries-container" *ngIf="wish.entries && wish.entries.length > 0">
+            <div class="entries" *ngFor='let entry of wish.entries'>
+                <p>Le {{ entry.dateBegin | date: 'dd/MM/yyyy' }}, de {{ entry.dateBegin | date: 'HH' }}h{{ entry.dateBegin | date: 'mm' }} à {{ entry.dateEnd | date: 'HH' }}h{{ entry.dateEnd | date: 'mm' }} ({{ duration }})</p>
+            </div>
+        </div>
     </div>
 </div>

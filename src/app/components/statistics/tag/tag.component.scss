@@ -3,8 +3,9 @@
 .tag {
     display: flex;
     align-items: center;
-    height: 50px;
-    width: 250px;
+    height: 42px;
+    padding: 8px 16px 8px 0;
+    width: fit-content;
     border-radius: 25px;
     box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.35);
 
@@ -35,5 +36,9 @@
         &.cancelled {
             background-color: $light-grey;
         }
+    }
+    .status {
+        color: #404040;
+        font-size: 14px;
     }
 }
