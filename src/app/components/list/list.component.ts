@@ -1,5 +1,7 @@
+import { VolunteersService } from './../../services/volunteers.service';
+import { Volunteer } from './../../objects/volunteer';
 import { Component, OnInit } from '@angular/core';
-import { faHandPointRight} from '@fortawesome/free-regular-svg-icons';
+import { tap } from 'rxjs/internal/operators/tap';
 
 @Component({
   selector: 'app-list',
@@ -8,11 +10,18 @@ import { faHandPointRight} from '@fortawesome/free-regular-svg-icons';
 })
 export class ListComponent implements OnInit {
 
-  handIcon = faHandPointRight;
-  
-  constructor() { }
+  volunteersList!: Volunteer[];
+
+  constructor(private service: VolunteersService) { }
 
   ngOnInit() {
+    this.getVolunteers();
   }
 
+  getVolunteers(): void {
+    this.service.getVolunteers()
+        .pipe(
+          tap((volunteers: Volunteer[]) => this.volunteersList = volunteers)
+        ).subscribe();
+  }
 }

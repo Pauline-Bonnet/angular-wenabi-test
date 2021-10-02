@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faHandPointRight} from '@fortawesome/free-regular-svg-icons';
 
 @Component({
   selector: 'app-volunteers',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./volunteers.component.scss']
 })
 export class VolunteersComponent implements OnInit {
+
+  handIcon = faHandPointRight;
 
   constructor() { }
 

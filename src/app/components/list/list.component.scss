@@ -1,21 +1,8 @@
-.container {
-    width: 80%;
-    margin: 100px auto;
-    font-family: 'Manjari', sans-serif;
-
-    h1 {
-        margin-bottom: 24px;
-        font-size: 36px;
-        font-weight: 700;
-    }
-
-    h3 {
-        display: flex;
-        font-size: 18px;
-        font-weight: 400;
-
-        fa-icon {
-            margin-right: 16px;
-        }
-    }
+.list-container {
+    width: 100%;
+    height: fit-content;
+    margin: 40px 0;
+    padding: 24px 16px;
+    background-color: #FFF;
+    border-radius: 25px;
 }

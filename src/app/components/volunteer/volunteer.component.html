@@ -1,1 +1,23 @@
-<p>volunteer works!</p>
+<div class="volunteer-container">
+    <div class="left-panel">
+        <div class="identity">
+            <img src="./../../../assets/images/NoPath - Copie (10).png" alt="">
+            <p>{{ wish.id }}</p>
+            <p>Inscrit le : {{ wish.createdDate | createdDate }}</p>
+        </div>
+        <div class="presentation">
+            <p>{{ wish.volunteerProfile.firstname }} {{ wish.volunteerProfile.lastname }}</p>
+            <p>{{ wish.volunteerProfile.company.name }}</p>
+            
+            <div class="mission">
+                <p>{{ wish.initiative.title }}</p>
+                <p>{{ wish.initiative.city }}</p>
+                <p>{{ wish.coordinatorProfile.firstname }} {{ wish.coordinatorProfile.lastname }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="right-panel">
+        <div class="status">
+        </div>
+    </div>
+</div>

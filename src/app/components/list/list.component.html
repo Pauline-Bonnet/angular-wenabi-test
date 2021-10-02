@@ -1,7 +1,10 @@
-<div class="container">
-    <div class="title">
-        <h1>Les volontaires</h1>
-        <h3><fa-icon [icon]="handIcon"></fa-icon>
-            <span>Retrouvez la liste de toutes les inscriptions à vos missions</span></h3>
+<div class="list-container">
+    <div class="stat-container">
+        <h2>En ce moment</h2>
+        <app-statistics></app-statistics>
+    </div>
+
+    <div class="volunteers-container" *ngFor="let volunteer of volunteersList">
+        <app-volunteer [wish]="volunteer"></app-volunteer>
     </div>
 </div>
