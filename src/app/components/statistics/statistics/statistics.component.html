@@ -7,7 +7,10 @@
     </div>
 
     <p class="advice">Suivez les inscriptions en fonction de leur statut :</p>
-    <div class="tags-container" *ngFor="let stat of statistics">
-        <app-tag *ngIf="stat.count > 1" [status]="stat.status" [count]="stat.count" (click)="selectStatus(stat.status)"></app-tag>
+    
+    <div class="tags-container">
+        <div class="tags" *ngFor="let stat of statistics">
+            <app-tag *ngIf="stat.count > 1" [status]="stat.status" [count]="stat.count" (click)="selectStatus(stat.status)"></app-tag>
+        </div>
     </div>
 </div>

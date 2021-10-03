@@ -17,11 +17,13 @@ export class VolunteerComponent implements OnInit {
   mapIcon = faMapMarkerAlt;
   userIcon = faUser;
   duration: string;
+  imageDisplayed: any;
 
   constructor() { }
 
   ngOnInit() {
     this.getDuration();
+    this.addRandomImage();
   }
 
   getDuration() {
@@ -36,5 +38,15 @@ export class VolunteerComponent implements OnInit {
         this.duration = [hours, minutes].join('h');
       })
     }
+  }
+
+  addRandomImage() {
+    // since there are no given image for the volunteers, add image randomly
+    const tabImages = [];
+    for (let i = 1 ; i < 8 ; i ++) {
+      tabImages.push(`./../../../assets/images/image${i}.png`);
+    }
+    const randomNum = Math.floor(Math.random() * tabImages.length);
+    this.imageDisplayed = tabImages[randomNum];
   }
 }

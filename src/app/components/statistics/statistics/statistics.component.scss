@@ -2,7 +2,8 @@
 
 .stats-container {
     .subscriptions {
-        margin: 16px 0 24px 0;
+        margin: 16px auto 24px auto;
+        width: 95%;
         font-size: 18px;
         font-weight: 700;
 
@@ -14,7 +15,13 @@
 
     .bar-container {
         display: flex;
-        width: 100%;
+        width: 95%;
+        margin: auto;
+
+        @media (min-width: 978px) {
+            width: 60%;
+            margin-left: 20px;
+        }
 
         app-progress-bar {
             width: fit-content;
@@ -32,16 +39,33 @@
     }
 
     .advice {
-        margin-top: 46px;
+        width: 95%;
+        margin: 46px auto 0 auto;
         color: #404040;
     }
     
     .tags-container {
-        margin-top: 24px;
+        width: 95%;
+        margin: 0 auto;
 
-        app-tag {
-            &:hover {
-                cursor: pointer;
+        @media (min-width: 650px) {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 880px;
+            margin: 0 auto;
+        }
+
+        .tags {
+            margin-top: 24px;
+
+            @media (min-width: 650px) {
+                    margin-right: 24px;
+            }
+    
+            app-tag {
+                &:hover {
+                    cursor: pointer;
+                }
             }
         }
     }

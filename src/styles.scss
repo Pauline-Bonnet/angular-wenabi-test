@@ -1,6 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
-// @import './assets/colors.scss';
-// @import './assets/fonts.scss';
+@import './assets/colors.scss';
 
 * {
     margin: 0;
@@ -17,5 +15,5 @@ html, body {
 }
 
 body {
-    background: transparent linear-gradient(247deg, #FFD40080 0%, #FFD400 100%) 0% 0% no-repeat;
+    background-color: #FAFAFA ;
 }
