@@ -28,6 +28,15 @@ export class VolunteersService {
             );
   }
 
+  getVolunteersByStatus(status: string): Observable<Volunteer[]> {
+    return this.httpClient.
+            get<VolunteerIO[]>(`https://6143a763c5b553001717d062.mockapi.io/api/wishes?status=${status}`)
+            .pipe(
+              tap((volunteers: Volunteer[]) => this.volunteers = volunteers),
+              catchError((err: HttpErrorResponse) => this.handleError(err))
+            )
+  }
+
   getStatistics(): Observable<Statistics[]> {
     return this.httpClient.
             get<StatisticsIO[]>(this.statisticsUrl)

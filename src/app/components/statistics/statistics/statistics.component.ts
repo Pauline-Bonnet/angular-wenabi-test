@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output,EventEmitter } from '@angular/core';
 import { VolunteersService } from 'src/app/services/volunteers.service';
 import { tap } from 'rxjs/internal/operators/tap';
 import { Statistics } from 'src/app/objects/statistics';
@@ -10,6 +10,7 @@ import { Statistics } from 'src/app/objects/statistics';
 })
 export class StatisticsComponent implements OnInit {
 
+  @Output() selectedStatus = new EventEmitter<string>();
   statistics!: Statistics[];
   total!: number;
 
@@ -23,13 +24,16 @@ export class StatisticsComponent implements OnInit {
     this.service.getStatistics()
         .pipe(
           tap((statistics: Statistics[]) => this.statistics = statistics),
-          tap(() => this.calculateTotal(this.statistics))
+          tap(() => this.calculateTotal(this.statistics)),
         ).subscribe();
   }
 
   calculateTotal(statistics: Statistics[]): void {
-    let tab = [];
-    statistics.forEach(stat => tab.push(stat.count))
-    this.total = tab.reduce((pre, cur) => pre + cur)
+    let tab = statistics.map((stat: Statistics) => stat.count);
+    this.total = tab.reduce((pre, cur) => pre + cur);
+  }
+
+  selectStatus(value:string): void {
+    this.selectedStatus.emit(value);
   }
 }

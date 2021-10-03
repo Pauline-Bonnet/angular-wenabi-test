@@ -1,10 +1,13 @@
 <div class="stats-container">
     <p class="subscriptions"><span>{{total}}</span> inscriptions</p>
-    <div class="progress-bar">
 
+    <div class="bar-container">
+        <app-progress-bar *ngFor="let stat of statistics" [stat]="stat" [style.width.%]="(stat.count / total) * 100">
+        </app-progress-bar>
     </div>
+
     <p class="advice">Suivez les inscriptions en fonction de leur statut :</p>
-    <div class="tags-container">
-        <app-tag *ngFor="let stat of statistics" [status]="stat.status" [count]="stat.count"></app-tag>
+    <div class="tags-container" *ngFor="let stat of statistics">
+        <app-tag *ngIf="stat.count > 1" [status]="stat.status" [count]="stat.count" (click)="selectStatus(stat.status)"></app-tag>
     </div>
 </div>

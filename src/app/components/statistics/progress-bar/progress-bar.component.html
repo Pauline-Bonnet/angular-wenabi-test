@@ -1,0 +1,6 @@
+<div class="container">
+    <div class="item" [ngClass]="stat.status | lowercase" [ngStyle]="{'width': progress + '%'}">
+        <a class="tooltip">{{ displayedStatus }}</a>
+    </div>
+    <!-- <div class="item-hover">{{ stat.status }}</div> -->
+</div>

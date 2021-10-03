@@ -1,10 +1,12 @@
 <div class="list-container">
     <div class="stat-container">
         <h2>En ce moment</h2>
-        <app-statistics></app-statistics>
+        <app-statistics (selectedStatus)='filterByStatus($event)'></app-statistics>
     </div>
 
     <div class="volunteers-container" *ngFor="let volunteer of volunteersList">
         <app-volunteer [wish]="volunteer"></app-volunteer>
     </div>
+
+    <button (click)="getVolunteers()">Voir toutes vos inscriptions</button>
 </div>

@@ -11,6 +11,7 @@ import { VolunteersComponent } from './components/volunteers/volunteers.componen
 import { ListComponent } from './components/list/list.component';
 import { VolunteerComponent } from './components/volunteer/volunteer.component';
 import { StatisticsComponent } from './components/statistics/statistics/statistics.component';
+import { ProgressBarComponent } from './components/statistics/progress-bar/progress-bar.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { StatisticsComponent } from './components/statistics/statistics/statisti
     StatisticsComponent,
     VolunteerComponent,
     CreatedDatePipe,
-    TagComponent
+    TagComponent,
+    ProgressBarComponent
   ],
   imports: [
     BrowserModule,

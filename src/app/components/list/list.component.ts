@@ -11,6 +11,7 @@ import { tap } from 'rxjs/internal/operators/tap';
 export class ListComponent implements OnInit {
 
   volunteersList!: Volunteer[];
+  selectedList!: Volunteer[];
 
   constructor(private service: VolunteersService) { }
 
@@ -20,6 +21,13 @@ export class ListComponent implements OnInit {
 
   getVolunteers(): void {
     this.service.getVolunteers()
+        .pipe(
+          tap((volunteers: Volunteer[]) => this.volunteersList = volunteers)
+        ).subscribe();
+  }
+
+  filterByStatus($event): void {
+    this.service.getVolunteersByStatus($event)
         .pipe(
           tap((volunteers: Volunteer[]) => this.volunteersList = volunteers)
         ).subscribe();
