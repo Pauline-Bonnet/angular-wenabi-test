@@ -1,0 +1,22 @@
+@import './../../../../assets/colors.scss';
+
+.stats-container {
+    .subscriptions {
+        margin-top: 16px;
+        font-size: 18px;
+        font-weight: 700;
+
+        span {
+            font-size: 40px;
+            font-weight: 700;
+        }
+    }
+
+    .advice {
+        margin-top: 32px;
+        color: #404040;
+    }
+    .tags-container {
+        margin-top: 24px;
+    }
+}

@@ -11,6 +11,7 @@ import { Statistics } from 'src/app/objects/statistics';
 export class StatisticsComponent implements OnInit {
 
   statistics!: Statistics[];
+  total!: number;
 
   constructor(private service: VolunteersService) { }
 
@@ -22,7 +23,13 @@ export class StatisticsComponent implements OnInit {
     this.service.getStatistics()
         .pipe(
           tap((statistics: Statistics[]) => this.statistics = statistics),
-          tap(() => console.log(this.statistics))
+          tap(() => this.calculateTotal(this.statistics))
         ).subscribe();
+  }
+
+  calculateTotal(statistics: Statistics[]): void {
+    let tab = [];
+    statistics.forEach(stat => tab.push(stat.count))
+    this.total = tab.reduce((pre, cur) => pre + cur)
   }
 }

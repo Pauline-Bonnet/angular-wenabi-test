@@ -1,6 +1,9 @@
 <div class="tag-container">
-    <div class="tag">
-        <div class="sticker" [ngClass]="color"></div>
-        <p class="status">{{ status }}</p>
+    <div class="tag" [ngClass]="count ? 'count-tag' : 'no-count-tag'">
+        <div class="main">
+            <div class="sticker" [ngClass]="color"></div>
+            <p class="status">{{ status }}</p>
+        </div>
+        <p class="count" *ngIf="count">{{ count }}</p>
     </div>
 </div>

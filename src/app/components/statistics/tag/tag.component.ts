@@ -9,6 +9,7 @@ import { StatusName } from 'src/app/objects/statistics';
 export class TagComponent implements OnInit {
 
   @Input() status!: string;
+  @Input() count?: number;
   color!: string;
 
   constructor() { }
