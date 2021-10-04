@@ -8,5 +8,5 @@
         <app-volunteer [wish]="volunteer"></app-volunteer>
     </div>
 
-    <button (click)="getVolunteers()">Voir toutes vos inscriptions</button>
+    <button (click)="getVolunteers()" *ngIf="isFiltered">Voir toutes vos inscriptions</button>
 </div>

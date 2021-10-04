@@ -12,6 +12,7 @@ export class ListComponent implements OnInit {
 
   volunteersList!: Volunteer[];
   selectedList!: Volunteer[];
+  isFiltered = false;
 
   constructor(private service: VolunteersService) { }
 
@@ -20,6 +21,7 @@ export class ListComponent implements OnInit {
   }
 
   getVolunteers(): void {
+    this.isFiltered = false;
     this.service.getVolunteers()
         .pipe(
           tap((volunteers: Volunteer[]) => this.volunteersList = volunteers)
@@ -31,5 +33,6 @@ export class ListComponent implements OnInit {
         .pipe(
           tap((volunteers: Volunteer[]) => this.volunteersList = volunteers)
         ).subscribe();
+    this.isFiltered = true;
   }
 }
