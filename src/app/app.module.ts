@@ -1,35 +1,20 @@
-import { TagComponent } from './components/statistics/tag/tag.component';
-import { CreatedDatePipe } from './services/pipe/created-date.pipe';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
-
+import { ListVolunteersModule } from './components/list-volunteers.module';
 import { AppComponent } from './app.component';
-import { VolunteersComponent } from './components/volunteers/volunteers.component';
-import { ListComponent } from './components/list/list.component';
-import { VolunteerComponent } from './components/volunteer/volunteer.component';
-import { StatisticsComponent } from './components/statistics/statistics/statistics.component';
-import { ProgressBarComponent } from './components/statistics/progress-bar/progress-bar.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    VolunteersComponent,
-    ListComponent,
-    StatisticsComponent,
-    VolunteerComponent,
-    CreatedDatePipe,
-    TagComponent,
-    ProgressBarComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FontAwesomeModule
+    ListVolunteersModule
   ],
   providers: [],
   bootstrap: [AppComponent]
